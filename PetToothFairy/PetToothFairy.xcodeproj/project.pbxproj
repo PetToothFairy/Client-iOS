@@ -16,9 +16,30 @@
 		6F0326622CB5483900E63C55 /* Ex+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0326612CB5483900E63C55 /* Ex+Color.swift */; };
 		6F0326642CB5498C00E63C55 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0326632CB5498C00E63C55 /* RegisterView.swift */; };
 		6F0326682CB54B0E00E63C55 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F0326672CB54B0E00E63C55 /* ContentView.swift */; };
+		6F05B4512CEE91F400C8FC90 /* PetHospitalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F05B4502CEE91F400C8FC90 /* PetHospitalMapView.swift */; };
+		6F38FC512CEC534C00C8958D /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F38FC502CEC534C00C8958D /* ImageView.swift */; };
+		6F38FC532CEC536C00C8958D /* Ex+UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F38FC522CEC536C00C8958D /* Ex+UIImagePicker.swift */; };
+		6F5C61D92CEE4E5F00EC6390 /* TartarAnalysisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5C61D82CEE4E5F00EC6390 /* TartarAnalysisViewModel.swift */; };
+		6F5C61DB2CEE5B8D00EC6390 /* TartarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5C61DA2CEE5B8D00EC6390 /* TartarResponse.swift */; };
+		6F5C61DD2CEE69A900EC6390 /* DiagnosisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F5C61DC2CEE69A000EC6390 /* DiagnosisModel.swift */; };
+		6F6B71772CCE044E00FB5DEB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6B71762CCE044E00FB5DEB /* NetworkManager.swift */; };
+		6F9582A42CB7D80D0020B913 /* AnimalHospitalMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9582A32CB7D80D0020B913 /* AnimalHospitalMapView.swift */; };
+		6F9582A82CB7DCD40020B913 /* LocationMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 6F9582A72CB7DCD40020B913 /* LocationMock.json */; };
+		6F9582AB2CB7DD4C0020B913 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9582AA2CB7DD4C0020B913 /* LocationModel.swift */; };
+		6FA26C3C2CE338BB0066D3EB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA26C3B2CE338BB0066D3EB /* LoginViewModel.swift */; };
+		6FA26C3F2CE339780066D3EB /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA26C3E2CE339780066D3EB /* LoginResponse.swift */; };
+		6FA26C432CE33B350066D3EB /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA26C422CE33B350066D3EB /* LoginManager.swift */; };
+		6FA26C452CE33B680066D3EB /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA26C442CE33B680066D3EB /* APIConstants.swift */; };
+		6FA64E092CEDD3D200F7CE05 /* BluetoothTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA64E082CEDD3D000F7CE05 /* BluetoothTestView.swift */; };
+		6FA64E0B2CEDE50F00F7CE05 /* BluetoothPeripheralDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA64E0A2CEDE50F00F7CE05 /* BluetoothPeripheralDelegate.swift */; };
 		6FAAC3852CB3EF34001C4843 /* PetToothFairyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FAAC3842CB3EF34001C4843 /* PetToothFairyApp.swift */; };
 		6FAAC3892CB3EF35001C4843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FAAC3882CB3EF35001C4843 /* Assets.xcassets */; };
 		6FAAC38C2CB3EF35001C4843 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FAAC38B2CB3EF35001C4843 /* Preview Assets.xcassets */; };
+		6FB02D8A2CDBA00F008C98D2 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB02D892CDBA00F008C98D2 /* BluetoothManager.swift */; };
+		6FB284F92CD39C70004A37BC /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6FB284F82CD39C70004A37BC /* KakaoSDKAuth */; };
+		6FB284FB2CD39C70004A37BC /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 6FB284FA2CD39C70004A37BC /* KakaoSDKCommon */; };
+		6FB284FD2CD39C70004A37BC /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 6FB284FC2CD39C70004A37BC /* KakaoSDKUser */; };
+		6FB3F6672CE4AE9A004A12E7 /* UIImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB3F6662CE4AE9A004A12E7 /* UIImagePicker.swift */; };
 		6FE9997C2CB75198005C9A43 /* MyPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE9997B2CB75198005C9A43 /* MyPageView.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,10 +53,29 @@
 		6F0326612CB5483900E63C55 /* Ex+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+Color.swift"; sourceTree = "<group>"; };
 		6F0326632CB5498C00E63C55 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		6F0326672CB54B0E00E63C55 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6F05B4502CEE91F400C8FC90 /* PetHospitalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetHospitalMapView.swift; sourceTree = "<group>"; };
+		6F38FC502CEC534C00C8958D /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		6F38FC522CEC536C00C8958D /* Ex+UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+UIImagePicker.swift"; sourceTree = "<group>"; };
+		6F5C61D82CEE4E5F00EC6390 /* TartarAnalysisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartarAnalysisViewModel.swift; sourceTree = "<group>"; };
+		6F5C61DA2CEE5B8D00EC6390 /* TartarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TartarResponse.swift; sourceTree = "<group>"; };
+		6F5C61DC2CEE69A000EC6390 /* DiagnosisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiagnosisModel.swift; sourceTree = "<group>"; };
+		6F6B71762CCE044E00FB5DEB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6F9582A32CB7D80D0020B913 /* AnimalHospitalMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalHospitalMapView.swift; sourceTree = "<group>"; };
+		6F9582A72CB7DCD40020B913 /* LocationMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LocationMock.json; sourceTree = "<group>"; };
+		6F9582AA2CB7DD4C0020B913 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		6FA26C3B2CE338BB0066D3EB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		6FA26C3E2CE339780066D3EB /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		6FA26C422CE33B350066D3EB /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		6FA26C442CE33B680066D3EB /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		6FA64E082CEDD3D000F7CE05 /* BluetoothTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothTestView.swift; sourceTree = "<group>"; };
+		6FA64E0A2CEDE50F00F7CE05 /* BluetoothPeripheralDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPeripheralDelegate.swift; sourceTree = "<group>"; };
 		6FAAC3812CB3EF34001C4843 /* PetToothFairy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetToothFairy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FAAC3842CB3EF34001C4843 /* PetToothFairyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetToothFairyApp.swift; sourceTree = "<group>"; };
 		6FAAC3882CB3EF35001C4843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6FAAC38B2CB3EF35001C4843 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6FB02D892CDBA00F008C98D2 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		6FB284FE2CD39C93004A37BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6FB3F6662CE4AE9A004A12E7 /* UIImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImagePicker.swift; sourceTree = "<group>"; };
 		6FE9997B2CB75198005C9A43 /* MyPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,6 +84,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FB284FB2CD39C70004A37BC /* KakaoSDKCommon in Frameworks */,
+				6FB284F92CD39C70004A37BC /* KakaoSDKAuth in Frameworks */,
+				6FB284FD2CD39C70004A37BC /* KakaoSDKUser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +105,7 @@
 		6F0326522CB546CE00E63C55 /* Brushing */ = {
 			isa = PBXGroup;
 			children = (
+				6FA64E082CEDD3D000F7CE05 /* BluetoothTestView.swift */,
 				6F0326552CB5471200E63C55 /* StartBrushingView.swift */,
 				6F0326572CB5473100E63C55 /* IngBrusingView.swift */,
 				6F0326592CB5475200E63C55 /* NotFoundDeviceView.swift */,
@@ -74,6 +118,9 @@
 			children = (
 				6F03265B2CB5478400E63C55 /* UploadImageView.swift */,
 				6F03265D2CB5479300E63C55 /* DiagnosisView.swift */,
+				6F9582A32CB7D80D0020B913 /* AnimalHospitalMapView.swift */,
+				6F38FC502CEC534C00C8958D /* ImageView.swift */,
+				6FB3F6662CE4AE9A004A12E7 /* UIImagePicker.swift */,
 			);
 			path = Tartar;
 			sourceTree = "<group>";
@@ -90,8 +137,48 @@
 			isa = PBXGroup;
 			children = (
 				6F0326612CB5483900E63C55 /* Ex+Color.swift */,
+				6F38FC522CEC536C00C8958D /* Ex+UIImagePicker.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6FA26C3A2CE338B00066D3EB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6FA26C3B2CE338BB0066D3EB /* LoginViewModel.swift */,
+				6F5C61D82CEE4E5F00EC6390 /* TartarAnalysisViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6FA26C3D2CE339120066D3EB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6F5C61DC2CEE69A000EC6390 /* DiagnosisModel.swift */,
+				6F9582AA2CB7DD4C0020B913 /* LocationModel.swift */,
+				6FA26C3E2CE339780066D3EB /* LoginResponse.swift */,
+				6F5C61DA2CEE5B8D00EC6390 /* TartarResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6FA26C412CE33B280066D3EB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6F6B71762CCE044E00FB5DEB /* NetworkManager.swift */,
+				6FA26C422CE33B350066D3EB /* LoginManager.swift */,
+			);
+			name = Network;
+			path = "New Group/Network";
+			sourceTree = "<group>";
+		};
+		6FA64E0C2CEDE53600F7CE05 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				6FB02D892CDBA00F008C98D2 /* BluetoothManager.swift */,
+				6FA64E0A2CEDE50F00F7CE05 /* BluetoothPeripheralDelegate.swift */,
+			);
+			path = Bluetooth;
 			sourceTree = "<group>";
 		};
 		6FAAC3782CB3EF34001C4843 = {
@@ -113,6 +200,7 @@
 		6FAAC3832CB3EF34001C4843 /* PetToothFairy */ = {
 			isa = PBXGroup;
 			children = (
+				6FB284FE2CD39C93004A37BC /* Info.plist */,
 				6FAAC3962CB3F0DC001C4843 /* Configuration */,
 				6FAAC3922CB3EF99001C4843 /* Sources */,
 				6FAAC3842CB3EF34001C4843 /* PetToothFairyApp.swift */,
@@ -132,7 +220,13 @@
 		6FAAC3922CB3EF99001C4843 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				6FA64E0C2CEDE53600F7CE05 /* Bluetooth */,
+				6FA26C412CE33B280066D3EB /* Network */,
+				6FA26C3D2CE339120066D3EB /* Models */,
+				6FA26C3A2CE338B00066D3EB /* ViewModel */,
+				6F9582A72CB7DCD40020B913 /* LocationMock.json */,
 				6FAAC3932CB3EFC8001C4843 /* View */,
+				6FA26C442CE33B680066D3EB /* APIConstants.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -145,6 +239,7 @@
 				6F0326522CB546CE00E63C55 /* Brushing */,
 				6F0326512CB546C500E63C55 /* Welcome */,
 				6F0326672CB54B0E00E63C55 /* ContentView.swift */,
+				6F05B4502CEE91F400C8FC90 /* PetHospitalMapView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -182,6 +277,11 @@
 			dependencies = (
 			);
 			name = PetToothFairy;
+			packageProductDependencies = (
+				6FB284F82CD39C70004A37BC /* KakaoSDKAuth */,
+				6FB284FA2CD39C70004A37BC /* KakaoSDKCommon */,
+				6FB284FC2CD39C70004A37BC /* KakaoSDKUser */,
+			);
 			productName = PetToothFairy;
 			productReference = 6FAAC3812CB3EF34001C4843 /* PetToothFairy.app */;
 			productType = "com.apple.product-type.application";
@@ -210,6 +310,9 @@
 				Base,
 			);
 			mainGroup = 6FAAC3782CB3EF34001C4843;
+			packageReferences = (
+				6FB284F72CD39C70004A37BC /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = 6FAAC3822CB3EF34001C4843 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -224,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F9582A82CB7DCD40020B913 /* LocationMock.json in Resources */,
 				6FAAC38C2CB3EF35001C4843 /* Preview Assets.xcassets in Resources */,
 				6FAAC3892CB3EF35001C4843 /* Assets.xcassets in Resources */,
 			);
@@ -238,15 +342,32 @@
 			files = (
 				6F0326642CB5498C00E63C55 /* RegisterView.swift in Sources */,
 				6F0326682CB54B0E00E63C55 /* ContentView.swift in Sources */,
+				6FA26C3F2CE339780066D3EB /* LoginResponse.swift in Sources */,
 				6F0326622CB5483900E63C55 /* Ex+Color.swift in Sources */,
+				6F38FC512CEC534C00C8958D /* ImageView.swift in Sources */,
+				6F5C61D92CEE4E5F00EC6390 /* TartarAnalysisViewModel.swift in Sources */,
 				6F0326502CB546BB00E63C55 /* SignInWithKakaoButtonView.swift in Sources */,
+				6FB02D8A2CDBA00F008C98D2 /* BluetoothManager.swift in Sources */,
+				6F38FC532CEC536C00C8958D /* Ex+UIImagePicker.swift in Sources */,
 				6F0326562CB5471200E63C55 /* StartBrushingView.swift in Sources */,
 				6F03265E2CB5479300E63C55 /* DiagnosisView.swift in Sources */,
 				6FE9997C2CB75198005C9A43 /* MyPageView.swift in Sources */,
+				6F5C61DB2CEE5B8D00EC6390 /* TartarResponse.swift in Sources */,
 				6F03265A2CB5475200E63C55 /* NotFoundDeviceView.swift in Sources */,
 				6FAAC3852CB3EF34001C4843 /* PetToothFairyApp.swift in Sources */,
+				6FA26C3C2CE338BB0066D3EB /* LoginViewModel.swift in Sources */,
+				6F9582A42CB7D80D0020B913 /* AnimalHospitalMapView.swift in Sources */,
+				6F9582AB2CB7DD4C0020B913 /* LocationModel.swift in Sources */,
 				6F0326582CB5473100E63C55 /* IngBrusingView.swift in Sources */,
+				6F6B71772CCE044E00FB5DEB /* NetworkManager.swift in Sources */,
+				6FA64E0B2CEDE50F00F7CE05 /* BluetoothPeripheralDelegate.swift in Sources */,
+				6FA64E092CEDD3D200F7CE05 /* BluetoothTestView.swift in Sources */,
+				6FA26C452CE33B680066D3EB /* APIConstants.swift in Sources */,
+				6FA26C432CE33B350066D3EB /* LoginManager.swift in Sources */,
+				6F5C61DD2CEE69A900EC6390 /* DiagnosisModel.swift in Sources */,
+				6F05B4512CEE91F400C8FC90 /* PetHospitalMapView.swift in Sources */,
 				6F03265C2CB5478400E63C55 /* UploadImageView.swift in Sources */,
+				6FB3F6672CE4AE9A004A12E7 /* UIImagePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,6 +499,7 @@
 				DEVELOPMENT_TEAM = 3FAK98S72C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetToothFairy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -407,6 +529,7 @@
 				DEVELOPMENT_TEAM = 3FAK98S72C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PetToothFairy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -447,6 +570,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6FB284F72CD39C70004A37BC /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6FB284F82CD39C70004A37BC /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FB284F72CD39C70004A37BC /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		6FB284FA2CD39C70004A37BC /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FB284F72CD39C70004A37BC /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		6FB284FC2CD39C70004A37BC /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FB284F72CD39C70004A37BC /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6FAAC3792CB3EF34001C4843 /* Project object */;
 }
