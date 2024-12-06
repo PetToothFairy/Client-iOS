@@ -19,7 +19,7 @@ class TartarAnalysisViewModel: ObservableObject {
   func analyzeImage(_ image: UIImage, completion: @escaping (Bool) -> Void) {
     isLoading = true
     
-    NetworkManager.shared.postTartarImage(image: image) { result in
+    TartarManager.shared.postTartarImage(image: image) { result in
       DispatchQueue.main.async {
         
         self.isLoading = false

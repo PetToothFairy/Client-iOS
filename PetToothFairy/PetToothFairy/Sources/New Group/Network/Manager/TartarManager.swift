@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-class NetworkManager {
-  static let shared = NetworkManager()
+class TartarManager {
+  static let shared = TartarManager()
   
   private init() {}
   
@@ -30,7 +30,7 @@ class NetworkManager {
   }
   
   func postTartarImage(image: UIImage, completion: @escaping (Result<Data, Error>) -> Void) {
-    let resizedImage = resizeImage(image: image, targetSize: CGSize(width: 300, height: 180)) // 원하는 크기로 조정
+    let resizedImage = resizeImage(image: image, targetSize: CGSize(width: 300, height: 180))
     
     let imageData = resizedImage.jpegData(compressionQuality: 1)
     let fileContent = imageData?.base64EncodedString()
@@ -60,7 +60,6 @@ class NetworkManager {
     }).resume()
   }
   
-  // 네트워크 에러 정의
   enum NetworkError: Error {
     case invalidURL
     case imageEncodingFailed
