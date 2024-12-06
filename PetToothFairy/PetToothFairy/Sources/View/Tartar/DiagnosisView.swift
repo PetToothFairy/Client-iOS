@@ -46,7 +46,6 @@ struct DiagnosisView: View {
         diagnosisText
         imageWithAnnotations
         disclaimerText
-        petHospitalMapView
         Spacer()
       }
       .frame(height: 380)
@@ -105,9 +104,4 @@ struct DiagnosisView: View {
       .scaledToFit()
       .padding(.top, 22)
   }
-}
-
-private var petHospitalMapView: some View {
-  PetHospitalMapView()
-    .frame()
 }
