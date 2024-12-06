@@ -2,6 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
+    <dict>
+        <key>43.203.221.161</key>
+        <dict>
+            <key>NSIncludesSubdomains</key>
+            <true/>
+            <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+            <true/>
+            <key>NSTemporaryExceptionMinimumTLSVersion</key>
+            <string>TLSv1.0</string>
+        </dict>
+    </dict>
+</dict>
+
+	<key>KAKAO_APP_KEY</key>
+	<string>30cf8da5716f717df417064047420c95</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>지도 사용을 위해 위치 접근 권한이 필요합니다.</string>
 	<key>NSBluetoothAlwaysUsageDescription</key>
