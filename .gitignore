@@ -98,4 +98,7 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+### API Constants ###
+/PetToothFairy/PetToothFairy/Sources/Network/APIConstants.swift
+
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode
