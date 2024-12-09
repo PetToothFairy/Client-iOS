@@ -9,7 +9,6 @@ import SwiftUI
 import KakaoSDKUser
 
 struct SignInWithKakaoButtonView: View {
-  
   @StateObject var loginViewModel = LoginViewModel()
   
   var body: some View {
