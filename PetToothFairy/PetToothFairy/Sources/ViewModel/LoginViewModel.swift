@@ -18,7 +18,7 @@ class LoginViewModel: ObservableObject {
   private var cancellables = Set<AnyCancellable>()
   
   init(){
-    loginResponse = LoginResponse(status: 0, body: "", message: Message(accessToken: "", refreshToken: ""))
+    loginResponse = LoginResponse(status: 0, message: "", data: TokensResponse(accessToken: "", refreshToken: ""))
     showJoin = false
     showContent = false
     socialToken = ""
@@ -51,22 +51,16 @@ class LoginViewModel: ObservableObject {
         },
         receiveValue: { receivedValue in
           switch receivedValue.status {
-          case 400:
-            print("Error 400")
-          case 500:
-            print("Error 500")
           case 403: // 회원가입
             self.loginResponse = receivedValue
             self.socialToken = socialToken
             self.toggleJoin()
-            print("SIGN_UP: SOCIAL_ACCESS_TOKEN = \(self.socialToken)")
-            print(receivedValue.status)
           case 200: // 재로그인
             self.loginResponse = receivedValue
-            TokenManager.accessToken = receivedValue.message?.accessToken
-            TokenManager.refreshToken = receivedValue.message?.refreshToken
+            TokenManager.accessToken = receivedValue.data?.accessToken
+            TokenManager.refreshToken = receivedValue.data?.refreshToken
             self.toggleLogin()
-            print("RE_LOGIN: ACCESS_TOKEN = \(receivedValue.message?.accessToken), REFRESH_TOKEN = \(receivedValue.message?.refreshToken)")
+            print("RE_LOGIN: ACCESS_TOKEN = \(receivedValue.data?.accessToken ?? ""), REFRESH_TOKEN = \(receivedValue.data?.refreshToken ?? "")")
           default:
             print("Unhandled status: \(receivedValue.status)")
           }
