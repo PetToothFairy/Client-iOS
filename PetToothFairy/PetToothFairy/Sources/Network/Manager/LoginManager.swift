@@ -23,7 +23,7 @@ enum LoginManager: URLRequestConvertible {
   var method: HTTPMethod {
     switch self {
     case .postkakaoLogin:
-      return .post
+      return .get
     }
   }
   
@@ -33,7 +33,7 @@ enum LoginManager: URLRequestConvertible {
     switch self {
     case .postkakaoLogin(let accessToken):
       headers.add(name: "Content-Type", value: "application/json")
-      headers.add(name: "Authorization", value: accessToken)
+      headers.add(name: "AccessToken", value: accessToken)
     }
     
     return headers
