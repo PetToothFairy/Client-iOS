@@ -9,10 +9,12 @@ import SwiftUI
 
 struct RegisterView: View {
   @ObservedObject var registerViewModel: RegisterViewModel
+  
   @Binding var socialToken: String
   
   @State private var name: String = ""
   @State private var kg: Int = 0
+  
   let numberRange = 1...30
   
   var body: some View {
@@ -77,8 +79,9 @@ struct RegisterView: View {
               .pickerStyle(WheelPickerStyle())
               .frame(maxHeight: 150, alignment: .top)
               
-              
-              NavigationLink(destination: ContentView()) {
+              Button {
+                registerViewModel.register(socialAccessToken: socialToken, petName: name, petWeight: kg)
+              } label : {
                 ZStack {
                   RoundedRectangle(cornerRadius: 20)
                     .foregroundColor(Color(hex: "3561E6"))
@@ -86,10 +89,12 @@ struct RegisterView: View {
                   Text("작성 완료")
                     .bold()
                     .foregroundColor(Color.white)
-                }
+                }.padding(.horizontal, 47)
+                  .padding(.top, 50)
               }
-              .padding(.horizontal, 47)
-              .padding(.top, 50)
+              .fullScreenCover(isPresented: $registerViewModel.showContent) {
+                ContentView()
+              }
               
               Spacer()
             }
