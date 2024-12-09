@@ -41,8 +41,8 @@ enum UserManager: URLRequestConvertible {
     headers.add(name: "Content-Type", value: "application/json")
     
     switch self {
-    case .registerUser(let socialAccessToken, let petName, let petWeight):
-      headers.add(name: "Authorization", value: socialAccessToken)
+    case .registerUser(let socialAccessToken, _, _):
+      headers.add(name: "AccessToken", value: socialAccessToken)
     case .getUserInfo:
       headers.add(name: "Authorization", value: TokenManager.accessToken ?? "")
     case .patchUserInfo(let petName, let petWeight):
@@ -56,15 +56,15 @@ enum UserManager: URLRequestConvertible {
     switch self {
     case .registerUser(_, let petName, let petWeight):
       return [
-        "PetName": petName,
-        "PetWeight": petWeight
+        "petName": petName,
+        "petWeight": petWeight
       ]
     case .getUserInfo:
       return nil
     case .patchUserInfo(let petName, let petWeight):
       return [
-        "PetName": petName,
-        "PetWeight": petWeight
+        "petName": petName,
+        "petWeight": petWeight
       ]
     }
   }
