@@ -36,7 +36,6 @@ struct SplashView: View {
       }
     }
     .fullScreenCover(isPresented: $isActive) {
-//      ContentView()
       SignInWithKakaoButtonView()
     }
   }
