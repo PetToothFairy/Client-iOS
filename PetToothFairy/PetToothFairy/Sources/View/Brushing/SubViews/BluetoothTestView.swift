@@ -20,13 +20,16 @@ struct BluetoothTestView: View {
       List(bluetoothManager.discoveredPeripherals, id: \.identifier) { peripheral in
         HStack {
           Text(peripheral.name ?? "Unknown Device")
+            .foregroundColor(.subFontColor)
           Spacer()
           Button("Connect") {
             bluetoothManager.connect(to: peripheral)
           }
           .foregroundColor(.blue)
         }
-      }.background(.white)
+        .listRowBackground(Color.clear)
+      }
+      .listStyle(PlainListStyle())
     }
     .onChange(of: bluetoothManager.connectedPeripheral) { connectedPeripheral in
       if connectedPeripheral != nil {

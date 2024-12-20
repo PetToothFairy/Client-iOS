@@ -13,6 +13,7 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
   @Published var connectedPeripheral: CBPeripheral?
   @Published var receivedData: String = "No Data"
   @Published var receivedDataArray: [String] = []
+  private var customNames: [String: String] = [:]
   
   var centralManager: CBCentralManager?
   private var rssiTimer: Timer?
@@ -80,7 +81,6 @@ class BluetoothManager: NSObject, ObservableObject, CBCentralManagerDelegate, CB
     // 중복된 디바이스는 추가하지 않음
     if !discoveredPeripherals.contains(where: { $0.identifier == peripheral.identifier }) {
       discoveredPeripherals.append(peripheral)
-      print("identifier : \(peripheral.identifier)")
     }
   }
   
