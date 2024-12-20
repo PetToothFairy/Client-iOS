@@ -51,7 +51,7 @@ class TartarAnalysisViewModel: ObservableObject {
     
     let newSize = CGSize(width: size.width * scaleFactor, height: size.height * scaleFactor)
     
-    self.imageSize = ImageDetails(width: Int(size.width * scaleFactor), height: Int(size.height * scaleFactor))
+    self.imageSize = ImageDetails(width: size.width * scaleFactor, height: size.height * scaleFactor)
     UIGraphicsBeginImageContextWithOptions(newSize, false, image.scale)
     image.draw(in: CGRect(origin: .zero, size: newSize))
     let resizedImage = UIGraphicsGetImageFromCurrentImageContext()

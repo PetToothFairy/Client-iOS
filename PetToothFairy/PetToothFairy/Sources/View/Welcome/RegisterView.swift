@@ -20,7 +20,7 @@ struct RegisterView: View {
   var body: some View {
     ZStack {
       ZStack{
-        Color(hex: "F5F5F5")
+        Color.backgroundColor
           .ignoresSafeArea()
         
         VStack {

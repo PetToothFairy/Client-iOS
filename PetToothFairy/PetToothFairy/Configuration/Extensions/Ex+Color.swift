@@ -9,6 +9,11 @@ import Foundation
 import SwiftUI
 
 extension Color {
+  static let navy = Color(hex: "1D3680")
+  static let mediumBlue = Color(hex: "3561E6")
+  static let subFontColor = Color(hex: "50505E")
+  static let backgroundColor = Color(hex: "F5F5F5")
+
   init(hex: String) {
     let scanner = Scanner(string: hex)
     _ = scanner.scanString("#")

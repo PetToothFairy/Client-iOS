@@ -16,46 +16,45 @@ struct SignInWithKakaoButtonView: View {
       VStack {
         Spacer(minLength: 236)
         
-        HStack(spacing: 0){
-          Image("icon_toothbrush_blue")
-          
-          Text("양치코치")
-            .font(.system(size: 40))
-            .fontWeight(.bold)
-            .foregroundColor(Color(hex: "3561E6"))
-            .padding()
-        }
+        Image("applogo")
+          .resizable()
+          .scaledToFit()
+          .frame(width: 130, height: 130)
+        
+        Text("양치코치")
+          .font(.system(size: 20))
+          .bold()
+          .foregroundColor(.blue.opacity(0.8))
         
         Spacer()
         
         Button {
-          if (UserApi.isKakaoTalkLoginAvailable()) {
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-              if let error = error {
-                print("👇 error 👇")
-                print(error)
-              }
-              else {
-                print("loginWithKakaoTalk() success.")
-                print("👉accessToken: \(oauthToken!.accessToken)")
-                print("👉refreshToken: \(oauthToken!.refreshToken)")
-                
-                self.loginViewModel.postKakaoLogin(socialToken: oauthToken!.accessToken)
-              }
+          //          if (UserApi.isKakaoTalkLoginAvailable()) {
+          //            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+          //              if let error = error {
+          //                print("👇 error 👇")
+          //                print(error)
+          //              }
+          //              else {
+          //                print("loginWithKakaoTalk() success.")
+          //                print("👉accessToken: \(oauthToken!.accessToken)")
+          //                print("👉refreshToken: \(oauthToken!.refreshToken)")
+          //
+          //                self.loginViewModel.postKakaoLogin(socialToken: oauthToken!.accessToken)
+          //              }
+          //            }
+          //          } else {
+          UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
+            if let error = error {
+              print("👇 error 👇")
+              print(error)
             }
-          } else {
-            UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
-              if let error = error {
-                print("👇 error 👇")
-                print(error)
-              }
-              else {
-                print("loginWithKakaoTalk() success.")
-                print("👉accessToken: \(oauthToken!.accessToken)")
-                print("👉refreshToken: \(oauthToken!.refreshToken)")
-                
-                self.loginViewModel.postKakaoLogin(socialToken: oauthToken!.accessToken)
-              }
+            else {
+              print("loginWithKakaoTalk() success.")
+              print("👉accessToken: \(oauthToken!.accessToken)")
+              print("👉refreshToken: \(oauthToken!.refreshToken)")
+              
+              self.loginViewModel.postKakaoLogin(socialToken: oauthToken!.accessToken)
             }
           }
         } label : {
@@ -63,7 +62,7 @@ struct SignInWithKakaoButtonView: View {
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width : UIScreen.main.bounds.width * 0.9)
-            .padding(.bottom, 121)
+            .padding(.bottom, 100)
         }
         .fullScreenCover(isPresented: $loginViewModel.showJoin) {
           RegisterView(registerViewModel: RegisterViewModel(), socialToken: $loginViewModel.socialToken)

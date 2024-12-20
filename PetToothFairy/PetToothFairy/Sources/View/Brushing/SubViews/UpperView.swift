@@ -19,10 +19,8 @@ struct UpperView: View {
         .frame(height: height)
         .padding(.horizontal, 13)
         .shadow(color: .gray.opacity(0.5), radius: 10, x: 0, y: 10)
-      
       HStack{
         TimerView()
-        
         VStack{
           Text("🦷 현재 닦고 있는 부위")
             .font(.system(size: 17))

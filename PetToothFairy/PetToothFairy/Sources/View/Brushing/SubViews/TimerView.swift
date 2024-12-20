@@ -18,6 +18,8 @@ struct TimerView: View {
   let lineWidth: CGFloat = 9
   let fontColor: Color = .white
   
+  var onTimerFinish: (() -> Void)?
+  
   var body: some View {
     VStack {
       ZStack {
@@ -36,7 +38,6 @@ struct TimerView: View {
               .stroke(lineWidth: lineWidth)
               .foregroundColor(Color.white.opacity(0.2))
               .shadow(color: Color.black.opacity(0.2), radius: 4, x: 0, y: 0)
-            
             Circle()
               .trim(from: 0, to: CGFloat(timeRemaining) / CGFloat(totalTime))
               .stroke(style: StrokeStyle(lineWidth: lineWidth, lineCap: .round, lineJoin: .round))
@@ -58,7 +59,6 @@ struct TimerView: View {
               .foregroundColor(fontColor)
               .shadow(color: .black.opacity(0.2), radius: 10, x: 0, y: 0)
           }
-          
         }
         .frame(width: circleScale, height: circleScale, alignment: .center)
         .padding()
@@ -76,7 +76,6 @@ struct TimerView: View {
       stopTimer()
     }
   }
-  
 
   private func startTimer() {
     isActive = true
@@ -85,6 +84,7 @@ struct TimerView: View {
         timeRemaining -= 1
       } else {
         stopTimer()
+        onTimerFinish?()
       }
     }
   }

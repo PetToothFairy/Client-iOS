@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
   @State private var selection: Tab = .brushing
+  @StateObject private var homeViewModel = HomeViewModel()
+  @StateObject private var bluetoothManager = BluetoothManager()
   
   enum Tab {
     case brushing
@@ -22,34 +24,25 @@ struct ContentView: View {
   
   var body: some View {
     TabView(selection: $selection) {
-      NavigationStack {
-        StartBrushingView()
-      }
-      .tabItem {
-        Image("icon_toothbrush").renderingMode(.template)
-        Text("양치 하기")
-      }
-      .tag(Tab.brushing)
+      createTabView(for: .brushing, view: StartBrushingView(homeViewModel: homeViewModel, bluetoothManager: bluetoothManager), iconName: "icon_toothbrush", title: "양치 하기")
       
-      NavigationStack {
-        UploadImageView()
-      }
-      .tabItem {
-        Image("icon_diagnosis").renderingMode(.template)
-        Text("치석 판단")
-      }
-      .tag(Tab.tartar)
-      NavigationStack {
-        MyPageView()
-      }
-      .tabItem {
-        Image("icon_mypage").renderingMode(.template)
-        Text("마이페이지")
-      }
-      .tag(Tab.mypage)
+      createTabView(for: .tartar, view: UploadImageView(), iconName: "icon_diagnosis", title: "치석 판단")
+      
+      createTabView(for: .mypage, view: MyPageView(homeViewModel: homeViewModel), iconName: "icon_mypage", title: "마이페이지")
     }
     .tint(.white)
     .accentColor(Color(hex: "474753"))
     .navigationBarHidden(true)
+  }
+  
+  private func createTabView<Content: View>(for tab: Tab, view: Content, iconName: String, title: String) -> some View {
+    NavigationStack {
+      view
+    }
+    .tabItem {
+      Image(iconName).renderingMode(.template)
+      Text(title)
+    }
+    .tag(tab)
   }
 }
