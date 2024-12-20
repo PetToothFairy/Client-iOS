@@ -6,17 +6,17 @@
 //
 
 import Foundation
-import Combine
 import Alamofire
+import Combine
 
 class RegisterViewModel: ObservableObject {
   @Published var showContent: Bool
-  @Published var registerResponse: LoginResponse
+  @Published var registerResponse: TokensResponse
   
   var subscription = Set<AnyCancellable>()
   
   init() {
-    registerResponse = LoginResponse(status: 0, message: "", data: TokensResponse(accessToken: "", refreshToken: ""))
+    registerResponse = TokensResponse(accessToken: "", refreshToken: "")
     showContent = false
   }
   
@@ -26,7 +26,7 @@ class RegisterViewModel: ObservableObject {
   
   func register(socialAccessToken: String, petName: String, petWeight: Int) {
     AF.request(UserManager.registerUser(socialAccessToken: socialAccessToken, petName: petName, petWeight: petWeight))
-      .publishDecodable(type: LoginResponse.self)
+      .publishDecodable(type: BasicResponse<TokensResponse>.self)
       .value()
       .sink(
         receiveCompletion: { completion in
@@ -38,7 +38,7 @@ class RegisterViewModel: ObservableObject {
           }
         },
         receiveValue: { [weak self] receivedValue in
-          self?.registerResponse = receivedValue
+          self?.registerResponse = receivedValue.data!
           if receivedValue.status == 200 {
             self?.toggleRegister()
             TokenManager.accessToken = receivedValue.data?.accessToken

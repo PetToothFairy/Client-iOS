@@ -41,7 +41,6 @@ class BrushingViewModel: ObservableObject {
           }
         },
         receiveValue: { [weak self] receivedValue in
-          print("💜 \(receivedValue)")
           self?.brushingResponse = receivedValue.data!
           self?.isLoading = false
           if receivedValue.status == 200 {
