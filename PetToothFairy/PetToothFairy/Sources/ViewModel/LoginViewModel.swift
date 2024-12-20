@@ -10,7 +10,7 @@ import Alamofire
 import Combine
 
 class LoginViewModel: ObservableObject {
-  @Published var loginResponse: LoginResponse
+  @Published var loginResponse: TokensResponse
   @Published var showJoin: Bool
   @Published var showContent: Bool
   @Published var socialToken: String
@@ -18,7 +18,7 @@ class LoginViewModel: ObservableObject {
   private var cancellables = Set<AnyCancellable>()
   
   init(){
-    loginResponse = LoginResponse(status: 0, message: "", data: TokensResponse(accessToken: "", refreshToken: ""))
+    loginResponse = TokensResponse(accessToken: "", refreshToken: "")
     showJoin = false
     showContent = false
     socialToken = ""
@@ -36,7 +36,7 @@ class LoginViewModel: ObservableObject {
     print("LoginViewModel - postKakaoLogin() called")
     
     AF.request(LoginManager.postkakaoLogin(accessToken: socialToken))
-      .publishDecodable(type: LoginResponse.self)
+      .publishDecodable(type: BasicResponse<TokensResponse>.self)
       .value()
       .print()
       .receive(on: DispatchQueue.main)
@@ -52,11 +52,11 @@ class LoginViewModel: ObservableObject {
         receiveValue: { receivedValue in
           switch receivedValue.status {
           case 403: // 회원가입
-            self.loginResponse = receivedValue
+            self.loginResponse = receivedValue.data!
             self.socialToken = socialToken
             self.toggleJoin()
           case 200: // 재로그인
-            self.loginResponse = receivedValue
+            self.loginResponse = receivedValue.data!
             TokenManager.accessToken = receivedValue.data?.accessToken
             TokenManager.refreshToken = receivedValue.data?.refreshToken
             self.toggleLogin()

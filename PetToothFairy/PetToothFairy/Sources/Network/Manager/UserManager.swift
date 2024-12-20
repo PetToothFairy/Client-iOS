@@ -19,7 +19,7 @@ enum UserManager: URLRequestConvertible {
     case .registerUser:
       return URL(string: "\(APIConstants.url)/api/register")!
     case .getUserInfo:
-      return URL(string: "\(APIConstants.url)/api/user/getinfo")!
+      return URL(string: "\(APIConstants.url)/api/home")!
     case .patchUserInfo:
       return URL(string: "\(APIConstants.url)/api/user/setinfo")!
     }
@@ -44,9 +44,9 @@ enum UserManager: URLRequestConvertible {
     case .registerUser(let socialAccessToken, _, _):
       headers.add(name: "AccessToken", value: socialAccessToken)
     case .getUserInfo:
-      headers.add(name: "Authorization", value: TokenManager.accessToken ?? "")
-    case .patchUserInfo(let petName, let petWeight):
-      headers.add(name: "Authorization", value: TokenManager.accessToken ?? "")
+      headers.add(name: "AccessToken", value: TokenManager.accessToken ?? "")
+    case .patchUserInfo:
+      headers.add(name: "AccessToken", value: TokenManager.accessToken ?? "")
     }
     
     return headers
