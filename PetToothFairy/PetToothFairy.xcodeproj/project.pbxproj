@@ -185,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				6F38FC502CEC534C00C8958D /* ImageView.swift */,
-				6FB3F6662CE4AE9A004A12E7 /* UIImagePicker.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -193,12 +192,23 @@
 		6F0A578E2D103CD100F9E399 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				6FB3F6662CE4AE9A004A12E7 /* UIImagePicker.swift */,
 				6F0A57852D0FBBDA00F9E399 /* LocationUtils.swift */,
 				6FD6BE972D0988E3001238B1 /* KeyboardResponsive.swift */,
 				6F0A576D2D0FACD300F9E399 /* AudioPlayer.swift */,
 				6FA64E0C2CEDE53600F7CE05 /* Bluetooth */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		6F37253C2D1563A200B89218 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				6F0A57792D0FB3E500F9E399 /* audio_middle.mp3 */,
+				6F0A577F2D0FB63B00F9E399 /* audio_end.mp3 */,
+				6F0A57802D0FB63B00F9E399 /* audio_start.mp3 */,
+			);
+			path = Audio;
 			sourceTree = "<group>";
 		};
 		6FA26C3A2CE338B00066D3EB /* ViewModel */ = {
@@ -303,11 +313,9 @@
 		6FAAC3962CB3F0DC001C4843 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				6F37253C2D1563A200B89218 /* Audio */,
 				6F0326602CB5482200E63C55 /* Extensions */,
 				6F03265F2CB5481000E63C55 /* Assets */,
-				6F0A57792D0FB3E500F9E399 /* audio_middle.mp3 */,
-				6F0A577F2D0FB63B00F9E399 /* audio_end.mp3 */,
-				6F0A57802D0FB63B00F9E399 /* audio_start.mp3 */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";

@@ -8,9 +8,6 @@
 import SwiftUI
 import CoreBluetooth
 
-import SwiftUI
-import CoreBluetooth
-
 struct BluetoothTestView: View {
   @ObservedObject var bluetoothManager: BluetoothManager
   @Environment(\.dismiss) private var dismiss

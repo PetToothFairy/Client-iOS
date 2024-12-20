@@ -29,21 +29,6 @@ struct SignInWithKakaoButtonView: View {
         Spacer()
         
         Button {
-          //          if (UserApi.isKakaoTalkLoginAvailable()) {
-          //            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-          //              if let error = error {
-          //                print("👇 error 👇")
-          //                print(error)
-          //              }
-          //              else {
-          //                print("loginWithKakaoTalk() success.")
-          //                print("👉accessToken: \(oauthToken!.accessToken)")
-          //                print("👉refreshToken: \(oauthToken!.refreshToken)")
-          //
-          //                self.loginViewModel.postKakaoLogin(socialToken: oauthToken!.accessToken)
-          //              }
-          //            }
-          //          } else {
           UserApi.shared.loginWithKakaoAccount {(oauthToken, error) in
             if let error = error {
               print("👇 error 👇")
