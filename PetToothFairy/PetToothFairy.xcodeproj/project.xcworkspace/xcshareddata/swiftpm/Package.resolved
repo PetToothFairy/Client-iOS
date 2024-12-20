@@ -1,5 +1,5 @@
 {
-  "originHash" : "0a9a0565c23645eacdcd0d177a036429567ab510b257a7f2538ea8bb318bf8d2",
+  "originHash" : "f5e0b0b888ce1f70e6dcc7df34d5878b0abd2d9a5d22efcfc480d9e438cc8dca",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -17,6 +17,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "ab4309c1950550add307046ad1e08024c7514603"
+      }
+    },
+    {
+      "identity" : "roboflow-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/roboflow/roboflow-swift",
+      "state" : {
+        "revision" : "a5a5b5b09eb290d5710f259aa6fd9d02b6f43952",
+        "version" : "1.1.19"
       }
     }
   ],
