@@ -14,8 +14,9 @@ struct UImagePicker: UIViewControllerRepresentable {
   
   @Environment(\.presentationMode)
   private var presentationMode
+  
   let sourceType: UIImagePickerController.SourceType
-  let imagePicked: (UIImage) -> () 
+  let imagePicked: (UIImage) -> ()
   
   class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
@@ -31,7 +32,6 @@ struct UImagePicker: UIViewControllerRepresentable {
         parent.imagePicked(image)
         parent.presentationMode.wrappedValue.dismiss()
       }
-      
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -43,11 +43,10 @@ struct UImagePicker: UIViewControllerRepresentable {
     Coordinator(parent: self)
   }
   
-  
   func makeUIViewController(context: Context) -> UIImagePickerController {
     let picker = UIImagePickerController()
     picker.delegate = context.coordinator
-    
+    picker.sourceType = sourceType // sourceType 설정 추가
     return picker
   }
   
