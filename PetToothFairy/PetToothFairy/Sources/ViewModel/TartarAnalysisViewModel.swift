@@ -9,58 +9,85 @@ import Foundation
 import SwiftUI
 import Combine
 
+import Roboflow
+
 class TartarAnalysisViewModel: ObservableObject {
   @Published var imageSize: ImageDetails?
   @Published var analysisResult: [DiagnosisModel] = []
   @Published var isLoading: Bool = false
   
-  private var cancellables = Set<AnyCancellable>()
+  let rf = RoboflowMobile(apiKey: APIConstants.roboKey)
+  var model: RFObjectDetectionModel?
   
-  func analyzeImage(_ image: UIImage, completion: @escaping (Bool) -> Void) {
+  func getTartarDiagnosis(img: UIImage) {
     isLoading = true
+    rf.load(model: "counttartar", modelVersion: 2) { [self] model, error, modelName, modelType in
+      if error != nil {
+        print(error?.localizedDescription as Any)
+      } else {
+        model?.configure(threshold: 0.5, overlap: 0.3, maxObjects: 10)
+        self.model = model
+      }
+    }
     
-    TartarManager.shared.postTartarImage(image: image) { result in
-      DispatchQueue.main.async {
-        
+    let resizeImg = resizeImage(image: img, targetSize: CGSize(width: 300, height: 180))
+    
+    model?.detect(image: resizeImg) { predictions, error in
+      if error != nil {
+        print(error ?? "error")
+      } else {
         self.isLoading = false
-        switch result {
-        case .success(let data):
-          do {
-            let response = try JSONDecoder().decode(TartarResponse.self, from: data)
-            self.analysisResult = self.analyzeResponse(response: response)
-            self.imageSize = response.image
-            completion(true)
-          } catch {
-            print("Error decoding JSON: \(error.localizedDescription)")
-            self.analysisResult = []
-            completion(false)
-          }
-        case .failure(let error):
-          print("Error analyzing image: \(error.localizedDescription)")
-          self.analysisResult = []
-          completion(false)
-        }
+        let dianosisModels = self.parsePredictions(predictions: predictions!)
+        self.analysisResult = self.convertToDiagnosisModels(predictions: dianosisModels)
       }
     }
   }
   
-  func analyzeResponse(response: TartarResponse) -> [DiagnosisModel] {
-    let tartarPredictions = response.predictions.filter { prediction in
-      prediction.predictionClass.lowercased().contains("tartar")
+  private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+    let size = image.size
+    let widthRatio  = targetSize.width  / size.width
+    let heightRatio = targetSize.height / size.height
+    let scaleFactor = min(widthRatio, heightRatio)
+    
+    let newSize = CGSize(width: size.width * scaleFactor, height: size.height * scaleFactor)
+    
+    self.imageSize = ImageDetails(width: Int(size.width * scaleFactor), height: Int(size.height * scaleFactor))
+    UIGraphicsBeginImageContextWithOptions(newSize, false, image.scale)
+    image.draw(in: CGRect(origin: .zero, size: newSize))
+    let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    return resizedImage!
+  }
+  
+  private func parsePredictions(predictions: [RFObjectDetectionPrediction]) -> [[String: Any]] {
+    var res = [[String: Any]]()
+    for det in predictions {
+      res.append(det.getValues())
+    }
+    return res
+  }
+  
+  private func convertToDiagnosisModels(predictions: [[String: Any]]) -> [DiagnosisModel] {
+    var models: [DiagnosisModel] = []
+    
+    for prediction in predictions {
+      guard let confidence = prediction["confidence"] as? Double,
+            let x = prediction["x"] as? Float,
+            let y = prediction["y"] as? Float,
+            let width = prediction["width"] as? Float,
+            let height = prediction["height"] as? Float else {
+        print("Error: Missing or invalid data in prediction: \(prediction)")
+        continue
+      }
+      
+      let position = CGPoint(x: Double(x), y: Double(y))
+      let size = CGSize(width: Double(width), height: Double(height))
+      
+      let model = DiagnosisModel(confidence: confidence, position: position, size: size)
+      models.append(model)
     }
     
-    guard !tartarPredictions.isEmpty else {
-      return []
-    }
-    
-    let results = tartarPredictions.map { prediction in
-      DiagnosisModel(
-        confidence: prediction.confidence * 100, // 신뢰도는 백분율로 변환
-        position: CGPoint(x: prediction.x, y: prediction.y),
-        size: CGSize(width: CGFloat(prediction.width), height: CGFloat(prediction.height))
-      )
-    }
-    
-    return results
+    return models
   }
 }
